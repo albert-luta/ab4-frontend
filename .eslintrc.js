@@ -9,6 +9,7 @@ module.exports = {
 		indent: ["error", "tab"],
 		quotes: ["error", "double"],
 		"comma-dangle": ["error", "never"],
-		"no-tabs": ["error", { allowIndentationTabs: true }]
+		"no-tabs": ["error", { allowIndentationTabs: true }],
+		"linebreak-style": ["error", "windows"]
 	}
 };
