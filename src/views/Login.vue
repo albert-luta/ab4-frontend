@@ -1,14 +1,26 @@
 <template>
-	<div>
-		<h1>Login Page</h1>
-		<BaseButton />
+	<div class="container">
+		<h1>Kite</h1>
+		<TheLoginForm />
 	</div>
 </template>
 
 <script>
+import TheLoginForm from '../components/TheLoginForm.vue';
+
 export default {
-	name: 'Login'
+	name: 'Login',
+	components: {
+		TheLoginForm
+	}
 };
 </script>
 
-<style></style>
+<style scoped>
+.container {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+</style>

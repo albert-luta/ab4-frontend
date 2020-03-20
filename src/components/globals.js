@@ -5,7 +5,7 @@ import BaseButton from './BaseButton.vue';
 import BaseInput from './BaseInput.vue';
 
 Vue.component('BaseButton', BaseButton);
-Vue.component('BaseButton', BaseInput);
+Vue.component('BaseInput', BaseInput);
 
 // Dynamic global components for the rest of the pages
 Vue.component('BaseSearchForm', () => import(/* webpackChunkName: "Map" */ './BaseSearchForm.vue'));
