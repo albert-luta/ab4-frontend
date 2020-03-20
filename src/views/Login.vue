@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<h1>Kite</h1>
+		<h1 class="logo">Kite</h1>
 		<TheLoginForm />
 	</div>
 </template>
@@ -18,9 +18,23 @@ export default {
 
 <style scoped>
 .container {
+	width: 90%;
 	min-height: 100vh;
+	max-width: 100rem;
+	margin: 0 auto;
+	padding-top: 20vh;
+
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
+}
+.logo {
+	font-size: 10vw;
+}
+
+@media (min-width: 750px) {
+	.logo {
+		font-size: 75px;
+	}
 }
 </style>

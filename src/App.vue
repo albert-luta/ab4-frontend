@@ -23,6 +23,5 @@ export default {
 }
 body {
 	font: 1.6rem/1.5 sans-serif;
-	min-height: 100vh;
 }
 </style>
