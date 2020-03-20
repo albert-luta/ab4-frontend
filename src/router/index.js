@@ -14,12 +14,12 @@ const routes = [
 	{
 		path: '/map/user/:userId',
 		name: 'Map',
-		component: () => import('../views/Map.vue')
+		component: () => import(/* webpackChunkName: "Map" */ '@/views/Map.vue')
 	},
 	{
 		path: '*',
 		name: '404',
-		component: () => import('../views/404.vue')
+		component: () => import('@/views/404.vue')
 	}
 ];
 
