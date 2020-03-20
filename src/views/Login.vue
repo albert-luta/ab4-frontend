@@ -2,6 +2,7 @@
 	<div class="container">
 		<h1 class="logo">Kite</h1>
 		<TheLoginForm />
+		<BaseInput label="Label" />
 	</div>
 </template>
 

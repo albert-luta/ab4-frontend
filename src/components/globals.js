@@ -8,4 +8,4 @@ Vue.component('BaseButton', BaseButton);
 Vue.component('BaseInput', BaseInput);
 
 // Dynamic global components for the rest of the pages
-Vue.component('BaseSearchForm', () => import(/* webpackChunkName: "Map" */ './BaseSearchForm.vue'));
+Vue.component('BasePopup', () => import(/* webpackChunkName: "Map" */ './BasePopup.vue'));

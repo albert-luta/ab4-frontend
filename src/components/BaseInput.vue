@@ -1,12 +1,59 @@
 <template>
-	<div>Base Input</div>
+	<div class="base-input">
+		<label :for="id" :class="classLabel">{{ label }}</label>
+		<input
+			:id="id"
+			:type="type"
+			:placeholder="placeholder"
+			class="base-input__input"
+			:class="classInput"
+			:value="value"
+			@input="$emit('input', $event.target.value)"
+		/>
+	</div>
 </template>
 
 <script>
 export default {
-	name: 'BaseInput'
+	name: 'BaseInput',
+	props: {
+		id: {
+			type: String,
+			required: true
+		},
+		label: {
+			type: String,
+			default: ''
+		},
+		classLabel: {
+			default: ''
+		},
+		type: {
+			type: String,
+			default: 'text'
+		},
+		placeholder: {
+			type: String,
+			default: ''
+		},
+		classInput: {
+			default: ''
+		},
+		value: {
+			type: String,
+			default: ''
+		}
+	}
 };
 </script>
 
-<style>
+<style scoped>
+.base-input {
+	width: 90%;
+	max-width: 33rem;
+}
+.base-input__input {
+	display: block;
+	width: 100%;
+}
 </style>

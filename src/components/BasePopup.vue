@@ -1,10 +1,10 @@
 <template>
-	<div>Base Search Form</div>
+	<div>Base Popup</div>
 </template>
 
 <script>
 export default {
-	name: 'BaseSearchForm'
+	name: 'BasePopup'
 };
 </script>
 
