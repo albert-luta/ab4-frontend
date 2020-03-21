@@ -21,11 +21,11 @@ export default {
 			type: String,
 			required: true
 		},
-		label: {
-			type: String,
+		classLabel: {
 			default: ''
 		},
-		classLabel: {
+		label: {
+			type: String,
 			default: ''
 		},
 		type: {
@@ -49,7 +49,6 @@ export default {
 
 <style scoped>
 .base-input {
-	width: 90%;
 	max-width: 33rem;
 }
 .base-input__input {
