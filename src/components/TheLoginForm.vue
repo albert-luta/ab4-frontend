@@ -3,7 +3,7 @@
 		<BaseInput id="username" label="Username" v-model="username" class="mb" />
 		<BaseInput id="password" type="password" label="Password" v-model="password" />
 		<div class="the-login-form__button">
-			<BaseButton type="submit" />
+			<BaseButton type="submit" title="Login" />
 		</div>
 	</form>
 </template>
@@ -24,8 +24,13 @@ export default {
 </script>
 
 <style>
+.the-login-form {
+	width: 100%;
+	max-width: 33rem;
+}
+
 .mb {
-	margin-bottom: 1.2rem;
+	margin-bottom: 1.5rem;
 }
 
 .the-login-form__button {
@@ -33,6 +38,6 @@ export default {
 	justify-content: center;
 	align-items: center;
 
-	margin-top: 2.25rem;
+	margin-top: 3.8rem;
 }
 </style>

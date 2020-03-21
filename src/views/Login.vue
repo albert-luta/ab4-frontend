@@ -30,10 +30,11 @@ export default {
 }
 
 .logo {
-	font-size: 10vw;
+	font-size: 13.5vw;
+	margin: 3rem 0 3rem 0;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 555px) {
 	.logo {
 		font-size: 75px;
 	}
