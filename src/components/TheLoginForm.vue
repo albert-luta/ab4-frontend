@@ -13,8 +13,16 @@
 			type="password"
 			label="Password"
 			v-model="password"
+			class="mb"
 			:disabled="disabled"
 			required
+		/>
+		<BaseInput
+			id="remember-me"
+			type="checkbox"
+			label="Remember me"
+			v-model="rememberMe"
+			:disabled="disabled"
 		/>
 		<div class="the-login-form__button">
 			<BaseButton type="submit" title="Login" :disabled="disabled" />
@@ -36,7 +44,8 @@ export default {
 	data() {
 		return {
 			username: '',
-			password: ''
+			password: '',
+			rememberMe: false
 		};
 	},
 	computed: mapState('auth', {

@@ -1,17 +1,38 @@
 <template>
 	<div class="base-input">
-		<label :for="id" :class="classLabel">{{ label }}</label>
-		<input
-			:id="id"
-			:type="type"
-			:disabled="disabled"
-			:required="required"
-			:placeholder="placeholder"
-			class="base-input__input"
-			:class="classInput"
-			:value="value"
-			@input="$emit('input', $event.target.value)"
-		/>
+		<template v-if="!isCheckbox">
+			<label :for="id" :class="classLabel">{{ label }}</label>
+			<input
+				:id="id"
+				:type="type"
+				:disabled="disabled"
+				:required="required"
+				:placeholder="placeholder"
+				class="base-input__input"
+				:class="classInput"
+				:value="value"
+				@input="$emit('input', $event.target.value)"
+			/>
+		</template>
+
+		<template v-else>
+			<input
+				:id="id"
+				:type="type"
+				:disabled="disabled"
+				:required="required"
+				:placeholder="placeholder"
+				:class="classInput"
+				:checked="value"
+				@change="$emit('input', $event.target.checked)"
+			/>
+			<label
+				v-if="isCheckbox"
+				:for="id"
+				class="base-input__label--checkbox"
+				:class="classLabel"
+			>{{ label }}</label>
+		</template>
 	</div>
 </template>
 
@@ -50,8 +71,13 @@ export default {
 			default: ''
 		},
 		value: {
-			type: String,
+			type: [String, Boolean],
 			default: ''
+		}
+	},
+	computed: {
+		isCheckbox() {
+			return ['checkbox', 'radio'].includes(this.type);
 		}
 	}
 };
@@ -65,5 +91,10 @@ export default {
 .base-input__input {
 	display: block;
 	width: 100%;
+}
+
+.base-input__label--checkbox {
+	margin-left: 0.5em;
+	font-size: 0.8em;
 }
 </style>
