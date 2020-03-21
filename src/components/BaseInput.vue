@@ -51,6 +51,7 @@ export default {
 .base-input {
 	max-width: 33rem;
 }
+
 .base-input__input {
 	display: block;
 	width: 100%;

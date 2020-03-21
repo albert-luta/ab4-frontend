@@ -14,6 +14,7 @@ export default {
 *::after {
 	box-sizing: border-box;
 }
+
 :root {
 	--clr-blue: #4a90e2;
 	--clr-red: #ff3b30;
@@ -21,6 +22,7 @@ export default {
 
 	font-size: 62.5%;
 }
+
 body {
 	font: 1.6rem/1.5 sans-serif;
 }

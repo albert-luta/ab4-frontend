@@ -28,6 +28,7 @@ export default {
 	flex-direction: column;
 	align-items: center;
 }
+
 .logo {
 	font-size: 10vw;
 }

@@ -1,11 +1,11 @@
 <template>
-	<section class="the-login-form">
+	<form class="the-login-form" @submit.prevent="onSubmit">
 		<BaseInput id="username" label="Username" v-model="username" class="mb" />
 		<BaseInput id="password" type="password" label="Password" v-model="password" />
 		<div class="the-login-form__button">
-			<BaseButton />
+			<BaseButton type="submit" />
 		</div>
-	</section>
+	</form>
 </template>
 
 <script>
@@ -16,6 +16,9 @@ export default {
 			username: '',
 			password: ''
 		};
+	},
+	methods: {
+		onSubmit() {}
 	}
 };
 </script>
@@ -24,6 +27,7 @@ export default {
 .mb {
 	margin-bottom: 1.2rem;
 }
+
 .the-login-form__button {
 	display: flex;
 	justify-content: center;
