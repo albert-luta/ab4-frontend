@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
 	name: 'TheLoginForm',
 	props: {
@@ -37,8 +39,34 @@ export default {
 			password: ''
 		};
 	},
+	computed: mapState('auth', {
+		userId: (state) => state.accesToken
+	}),
 	methods: {
-		login() {}
+		async login() {
+			try {
+				await this.$store.dispatch('auth/login', {
+					username: this.username,
+					password: this.password
+				});
+
+				this.$router.push({ name: 'Map', params: { userId: this.userId } });
+			} catch (error) {
+				if (error.response) {
+					// Server responded with an error status code
+				} else if (error.request) {
+					// Request was made, but didn't receive any response back
+				} else {
+					// Request was bad
+				}
+			}
+		}
+	},
+	created() {
+		/*
+		if (this.userId !== null) {
+			this.$router.push({ name: 'Map', params: { userId: this.userId } });
+		} */
 	}
 };
 </script>

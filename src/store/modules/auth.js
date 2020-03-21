@@ -1,8 +1,24 @@
+import axios from '@/services/api/config';
+
 export default {
 	namespaced: true,
 
-	state: {},
-	mutations: {},
-	actions: {},
+	state: {
+		accesToken: localStorage.getItem('accesToken') || null
+	},
+	mutations: {
+		SET_ACCES_TOKEN(state, accesToken) {
+			state.accesToken = accesToken;
+		}
+	},
+	actions: {
+		async login({ commit }, credentials) {
+			const res = await axios.post('/login', credentials);
+			const { userId } = res.data;
+
+			commit('SET_ACCES_TOKEN', userId);
+			localStorage.setItem('accesToken', userId);
+		}
+	},
 	getters: {}
 };
