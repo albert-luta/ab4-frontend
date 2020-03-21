@@ -4,6 +4,7 @@
 		<input
 			:id="id"
 			:type="type"
+			:disabled="disabled"
 			:placeholder="placeholder"
 			class="base-input__input"
 			:class="classInput"
@@ -31,6 +32,10 @@ export default {
 		type: {
 			type: String,
 			default: 'text'
+		},
+		disabled: {
+			type: Boolean,
+			default: false
 		},
 		placeholder: {
 			type: String,
