@@ -10,6 +10,8 @@ module.exports = {
 		quotes: ['error', 'single'],
 		'comma-dangle': ['error', 'never'],
 		'no-tabs': ['error', { allowIndentationTabs: true }],
-		'linebreak-style': ['error', 'windows']
+		'linebreak-style': ['error', 'windows'],
+		'implicit-arrow-linebreak': 0,
+		'function-paren-newline': 0
 	}
 };

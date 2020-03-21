@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-import '@/components/globals';
+import '@/plugins/global_components';
 import 'normalize.css';
 
 Vue.config.productionTip = false;
