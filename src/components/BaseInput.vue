@@ -5,6 +5,7 @@
 			:id="id"
 			:type="type"
 			:disabled="disabled"
+			:required="required"
 			:placeholder="placeholder"
 			class="base-input__input"
 			:class="classInput"
@@ -34,6 +35,10 @@ export default {
 			default: 'text'
 		},
 		disabled: {
+			type: Boolean,
+			default: false
+		},
+		required: {
 			type: Boolean,
 			default: false
 		},

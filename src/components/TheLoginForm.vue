@@ -1,12 +1,20 @@
 <template>
-	<form class="the-login-form" @submit.prevent="onSubmit">
-		<BaseInput id="username" label="Username" v-model="username" class="mb" :disabled="disabled" />
+	<form class="the-login-form" @submit.prevent="login">
+		<BaseInput
+			id="username"
+			label="Username"
+			v-model="username"
+			class="mb"
+			:disabled="disabled"
+			required
+		/>
 		<BaseInput
 			id="password"
 			type="password"
 			label="Password"
 			v-model="password"
 			:disabled="disabled"
+			required
 		/>
 		<div class="the-login-form__button">
 			<BaseButton type="submit" title="Login" :disabled="disabled" />
@@ -30,7 +38,7 @@ export default {
 		};
 	},
 	methods: {
-		onSubmit() {}
+		login() {}
 	}
 };
 </script>
