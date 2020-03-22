@@ -1,5 +1,5 @@
 <template>
-	<button :type="type" :disabled="disabled" @click="onClick" class="base-button">
+	<button :type="type" :disabled="disabled" @click="$emit('click')" class="base-button">
 		<slot>{{ title }}</slot>
 	</button>
 </template>
@@ -7,11 +7,6 @@
 <script>
 export default {
 	name: 'BaseButton',
-	data() {
-		return {
-			console: ''
-		};
-	},
 	props: {
 		type: {
 			type: String,
@@ -21,10 +16,6 @@ export default {
 		disabled: {
 			type: Boolean,
 			default: false
-		},
-		onClick: {
-			type: Function,
-			default: () => {}
 		},
 		title: {
 			type: String,
