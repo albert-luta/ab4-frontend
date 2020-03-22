@@ -39,7 +39,8 @@ export default {
 	min-width: 7.5em;
 }
 
-.base-button:hover {
+.base-button:hover,
+.base-button:active {
 	filter: brightness(115%);
 	cursor: pointer;
 }
