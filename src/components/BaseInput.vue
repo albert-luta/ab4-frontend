@@ -1,7 +1,7 @@
 <template>
 	<div class="base-input">
 		<template v-if="!isCheckbox">
-			<label :for="id" :class="classLabel">{{ label }}</label>
+			<label :for="id">{{ label }}</label>
 			<input
 				:id="id"
 				:type="type"
@@ -9,7 +9,6 @@
 				:required="required"
 				:placeholder="placeholder"
 				class="base-input__input"
-				:class="classInput"
 				:value="value"
 				@input="$emit('input', $event.target.value)"
 			/>
@@ -22,16 +21,10 @@
 				:disabled="disabled"
 				:required="required"
 				:placeholder="placeholder"
-				:class="classInput"
 				:checked="value"
 				@change="$emit('input', $event.target.checked)"
 			/>
-			<label
-				v-if="isCheckbox"
-				:for="id"
-				class="base-input__label--checkbox"
-				:class="classLabel"
-			>{{ label }}</label>
+			<label v-if="isCheckbox" :for="id" class="base-input__label--checkbox">{{ label }}</label>
 		</template>
 	</div>
 </template>
@@ -43,9 +36,6 @@ export default {
 		id: {
 			type: String,
 			required: true
-		},
-		classLabel: {
-			default: ''
 		},
 		label: {
 			type: String,
@@ -65,9 +55,6 @@ export default {
 		},
 		placeholder: {
 			type: String,
-			default: ''
-		},
-		classInput: {
 			default: ''
 		},
 		value: {
@@ -95,6 +82,5 @@ export default {
 
 .base-input__label--checkbox {
 	margin-left: 0.5em;
-	font-size: 0.8em;
 }
 </style>

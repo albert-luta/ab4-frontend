@@ -22,6 +22,7 @@
 			type="checkbox"
 			label="Remember me"
 			v-model="rememberMe"
+			class="the-login-form__checkbox"
 			:disabled="disabled"
 		/>
 		<div class="the-login-form__button">
@@ -88,5 +89,9 @@ export default {
 	align-items: center;
 
 	margin-top: 3.8rem;
+}
+
+.the-login-form__checkbox {
+	font-size: 0.8em;
 }
 </style>
