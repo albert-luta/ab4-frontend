@@ -5,7 +5,7 @@
 			label="Username"
 			v-model="username"
 			class="mb"
-			:disabled="disabled"
+			:disabled="disabled || loading"
 			required
 		/>
 		<BaseInput
@@ -14,7 +14,7 @@
 			label="Password"
 			v-model="password"
 			class="mb"
-			:disabled="disabled"
+			:disabled="disabled || loading"
 			required
 		/>
 		<BaseInput
@@ -23,10 +23,10 @@
 			label="Remember me"
 			v-model="rememberMe"
 			class="the-login-form__checkbox"
-			:disabled="disabled"
+			:disabled="disabled || loading"
 		/>
 		<div class="the-login-form__button">
-			<BaseButton type="submit" title="Login" :disabled="disabled" />
+			<BaseButton type="submit" title="Login" :disabled="disabled || loading" />
 		</div>
 	</form>
 </template>
@@ -44,11 +44,13 @@ export default {
 		return {
 			username: '',
 			password: '',
-			rememberMe: false
+			rememberMe: false,
+			loading: false
 		};
 	},
 	methods: {
 		async login() {
+			this.loading = true;
 			try {
 				await this.$store.dispatch('auth/login', {
 					credentials: {
@@ -68,6 +70,7 @@ export default {
 					// Request was bad
 				}
 			}
+			this.loading = false;
 		}
 	}
 };
