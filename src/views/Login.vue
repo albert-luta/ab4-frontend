@@ -1,7 +1,9 @@
 <template>
-	<div class="container">
+	<div class="container login-container">
 		<h1 class="logo">Kite</h1>
-		<TheLoginForm />
+		<main class="main">
+			<TheLoginForm />
+		</main>
 	</div>
 </template>
 
@@ -17,11 +19,8 @@ export default {
 </script>
 
 <style scoped>
-.container {
-	width: 90%;
+.login-container {
 	min-height: 100vh;
-	max-width: 100rem;
-	margin: 0 auto;
 	padding-top: 20vh;
 
 	display: flex;
@@ -32,6 +31,14 @@ export default {
 .logo {
 	font-size: 13.5vw;
 	margin: 3rem 0 3rem 0;
+}
+
+.main {
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @media (min-width: 555px) {

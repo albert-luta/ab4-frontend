@@ -76,7 +76,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .the-login-form {
 	width: 100%;
 	max-width: 33rem;

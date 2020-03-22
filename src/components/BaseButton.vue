@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .base-button {
 	border: 0;
 	padding: 0;

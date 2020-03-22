@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<BaseHeader>Ceva</BaseHeader>
 		<h1>Dashboard</h1>
 	</div>
 </template>
@@ -10,4 +11,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>
