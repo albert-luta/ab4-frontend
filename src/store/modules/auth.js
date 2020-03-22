@@ -22,5 +22,9 @@ export default {
 			}
 		}
 	},
-	getters: {}
+	getters: {
+		loggedIn(state) {
+			return state.accesToken !== null;
+		}
+	}
 };
