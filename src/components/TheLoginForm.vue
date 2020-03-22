@@ -58,7 +58,7 @@ export default {
 					rememberMe: this.rememberMe
 				});
 
-				this.$router.push({ name: 'Dashboard' });
+				await this.$router.push({ name: 'Dashboard' });
 			} catch (error) {
 				if (error.response) {
 					// Server responded with an error status code
