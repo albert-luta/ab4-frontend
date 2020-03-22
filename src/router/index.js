@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Login from '../views/Login.vue';
+import Login from '@/views/Login.vue';
 
 Vue.use(VueRouter);
 
@@ -12,16 +12,14 @@ const routes = [
 		component: Login
 	},
 	{
-		path: '/map/user/:userId',
-		name: 'Map',
-		component: () =>
-			import(/* webpackChunkName: "Map" */ '@/views/Map.vue')
+		path: '/dashboard',
+		name: 'Dashboard',
+		component: () => import(/* webpackChunkName: "Dashboard" */ '@/views/Dashboard.vue')
 	},
 	{
 		path: '*',
 		name: '404',
-		component: () =>
-			import('@/views/404.vue')
+		component: () => import('@/views/404.vue')
 	}
 ];
 

@@ -8,8 +8,18 @@
 <script>
 import TheLoginForm from '@/components/TheLoginForm.vue';
 
+import { mapState } from 'vuex';
+
 export default {
 	name: 'Login',
+	computed: mapState('auth', {
+		accesToken: (state) => state.accesToken
+	}),
+	created() {
+		if (this.accesToken !== null) {
+			this.$router.push({ name: 'Dashboard' });
+		}
+	},
 	components: {
 		TheLoginForm
 	}

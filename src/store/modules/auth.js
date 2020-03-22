@@ -12,12 +12,14 @@ export default {
 		}
 	},
 	actions: {
-		async login({ commit }, credentials) {
+		async login({ commit }, { credentials, rememberMe }) {
 			const res = await axios.post('/login', credentials);
 			const { userId } = res.data;
 
 			commit('SET_ACCES_TOKEN', userId);
-			localStorage.setItem('accesToken', userId);
+			if (rememberMe) {
+				localStorage.setItem('accesToken', userId);
+			}
 		}
 	},
 	getters: {}

@@ -31,8 +31,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
 	name: 'TheLoginForm',
 	props: {
@@ -48,18 +46,18 @@ export default {
 			rememberMe: false
 		};
 	},
-	computed: mapState('auth', {
-		userId: (state) => state.accesToken
-	}),
 	methods: {
 		async login() {
 			try {
 				await this.$store.dispatch('auth/login', {
-					username: this.username,
-					password: this.password
+					credentials: {
+						username: this.username,
+						password: this.password
+					},
+					rememberMe: this.rememberMe
 				});
 
-				this.$router.push({ name: 'Map', params: { userId: this.userId } });
+				this.$router.push({ name: 'Dashboard' });
 			} catch (error) {
 				if (error.response) {
 					// Server responded with an error status code
@@ -70,12 +68,6 @@ export default {
 				}
 			}
 		}
-	},
-	created() {
-		/*
-		if (this.userId !== null) {
-			this.$router.push({ name: 'Map', params: { userId: this.userId } });
-		} */
 	}
 };
 </script>

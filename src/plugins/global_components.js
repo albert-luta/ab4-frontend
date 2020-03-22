@@ -9,5 +9,5 @@ Vue.component('BaseInput', BaseInput);
 
 // Dynamic global components for the rest of the pages
 Vue.component('BasePopup', () =>
-	import(/* webpackChunkName: "Map" */ '@/components/BasePopup.vue')
+	import(/* webpackChunkName: "Dashboard" */ '@/components/BasePopup.vue')
 );
