@@ -1,7 +1,7 @@
 <template>
 	<form class="the-login-form" @submit.prevent="login">
 		<BaseInput
-			id="username"
+			input-id="username"
 			label="Username"
 			v-model="username"
 			class="mb"
@@ -9,7 +9,7 @@
 			required
 		/>
 		<BaseInput
-			id="password"
+			input-id="password"
 			type="password"
 			label="Password"
 			v-model="password"
@@ -18,7 +18,7 @@
 			required
 		/>
 		<BaseInput
-			id="remember-me"
+			input-id="remember-me"
 			type="checkbox"
 			label="Remember me"
 			v-model="rememberMe"

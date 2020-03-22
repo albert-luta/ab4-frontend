@@ -1,9 +1,9 @@
 <template>
 	<div class="base-input">
 		<template v-if="!isCheckbox">
-			<label :for="id">{{ label }}</label>
+			<label :for="inputId">{{ label }}</label>
 			<input
-				:id="id"
+				:id="inputId"
 				:type="type"
 				:disabled="disabled"
 				:required="required"
@@ -16,7 +16,7 @@
 
 		<template v-else>
 			<input
-				:id="id"
+				:id="inputId"
 				:type="type"
 				:disabled="disabled"
 				:required="required"
@@ -24,7 +24,9 @@
 				:checked="value"
 				@change="$emit('input', $event.target.checked)"
 			/>
-			<label v-if="isCheckbox" :for="id" class="base-input__label--checkbox">{{ label }}</label>
+			<label v-if="isCheckbox" :for="inputId" class="base-input__label--checkbox">{{
+				label
+			}}</label>
 		</template>
 	</div>
 </template>
@@ -33,7 +35,7 @@
 export default {
 	name: 'BaseInput',
 	props: {
-		id: {
+		inputId: {
 			type: String,
 			required: true
 		},
