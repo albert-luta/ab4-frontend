@@ -2,40 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import store from '@/store/index';
-
-import Login from '@/views/Login.vue';
+import routes from './routes';
 
 Vue.use(VueRouter);
-
-const routes = [
-	{
-		path: '/',
-		redirect: {
-			name: 'Login'
-		}
-	},
-	{
-		path: '/login',
-		name: 'Login',
-		component: Login,
-		meta: {
-			requiresVisitor: true
-		}
-	},
-	{
-		path: '/dashboard',
-		name: 'Dashboard',
-		component: () => import(/* webpackChunkName: "Dashboard" */ '@/views/Dashboard.vue'),
-		meta: {
-			requiresAuth: true
-		}
-	},
-	{
-		path: '*',
-		name: '404',
-		component: () => import('@/views/404.vue')
-	}
-];
 
 const router = new VueRouter({
 	mode: 'history',
