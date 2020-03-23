@@ -8,7 +8,7 @@
 		/>
 
 		<ul v-show="isVisible" class="account-menu__list">
-			<li class="account-menu__list-item">
+			<li class="account-menu__list-item" @click="logout">
 				<img src="@/assets/logout.svg" alt="Logout icon" class="account-menu__logout-icon" />
 				Logout
 			</li>
@@ -23,6 +23,17 @@ export default {
 		return {
 			isVisible: false
 		};
+	},
+	methods: {
+		logout() {
+			try {
+				this.$store.dispatch('auth/logout');
+			} catch (error) {
+				// Handle errors
+			} finally {
+				this.$router.push('/');
+			}
+		}
 	}
 };
 </script>

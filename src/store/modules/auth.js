@@ -4,11 +4,14 @@ export default {
 	namespaced: true,
 
 	state: {
-		accesToken: localStorage.getItem('accesToken') || null
+		accessToken: localStorage.getItem('accessToken') || null
 	},
 	mutations: {
-		SET_ACCES_TOKEN(state, accesToken) {
-			state.accesToken = accesToken;
+		SET_ACCESS_TOKEN(state, accessToken) {
+			state.accessToken = accessToken;
+		},
+		DESTROY_ACCESS_TOKEN(state) {
+			state.accessToken = null;
 		}
 	},
 	actions: {
@@ -16,15 +19,19 @@ export default {
 			const res = await axios.post('/login', credentials);
 			const { userId } = res.data;
 
-			commit('SET_ACCES_TOKEN', userId);
+			commit('SET_ACCESS_TOKEN', userId);
 			if (rememberMe) {
-				localStorage.setItem('accesToken', userId);
+				localStorage.setItem('accessToken', userId);
 			}
+		},
+		logout({ commit }) {
+			commit('DESTROY_ACCESS_TOKEN');
+			localStorage.removeItem('accessToken');
 		}
 	},
 	getters: {
 		loggedIn(state) {
-			return state.accesToken !== null;
+			return state.accessToken !== null;
 		}
 	}
 };
