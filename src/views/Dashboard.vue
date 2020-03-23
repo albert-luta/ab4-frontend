@@ -1,14 +1,20 @@
 <template>
 	<div>
-		<BaseHeader>Ceva</BaseHeader>
+		<DashboardHeader />
 		<h1>Dashboard</h1>
 	</div>
 </template>
 
 <script>
+import DashboardHeader from '@/components/DashboardHeader.vue';
+
 export default {
-	name: 'Dashboard'
+	name: 'Dashboard',
+	components: {
+		DashboardHeader
+	}
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

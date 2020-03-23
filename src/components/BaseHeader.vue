@@ -30,7 +30,7 @@ export default {
 }
 
 .base-header__logo h1 {
-	font-size: 2.8rem;
+	font-size: 3.5rem;
 	margin: 0;
 }
 
