@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "b90bf514-948f-4b3b-85d9-82f12ead7850",
+		"name": "Kitesurf",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user",
+							"host": ["{{URL}}"],
+							"path": ["user"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/1",
+							"host": ["{{URL}}"],
+							"path": ["user", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Miss Arne Pouros\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/user/12",
+							"host": ["{{URL}}"],
+							"path": ["user", "12"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete with id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/1",
+							"host": ["{{URL}}"],
+							"path": ["user", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"createdAt\": \"2019-11-25T07:36:56.404Z\",\n    \"name\": \"Domenica Lynch\",\n    \"avatar\": \"https://s3.amazonaws.com/uifaces/faces/twitter/catarino/128.jpg\",\n    \"email\": \"Jaylan_Russel@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/user",
+							"host": ["{{URL}}"],
+							"path": ["user"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Spot",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/spot",
+							"host": ["{{URL}}"],
+							"path": ["spot"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/spot/1",
+							"host": ["{{URL}}"],
+							"path": ["spot", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Renner - Schiller\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/spot/12",
+							"host": ["{{URL}}"],
+							"path": ["spot", "12"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete with id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/spot/1",
+							"host": ["{{URL}}"],
+							"path": ["spot", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"createdAt\": \"2019-11-25T00:11:50.990Z\",\n    \"name\": \"Test Group\",\n    \"country\": \"Macedonia\",\n    \"lat\": \"-7.8482\",\n    \"long\": \"-36.1399\",\n    \"probability\": 46,\n    \"month\": \"May\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/spot",
+							"host": ["{{URL}}"],
+							"path": ["spot"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favourites",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/favourites",
+							"host": ["{{URL}}"],
+							"path": ["favourites"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/favourites/1",
+							"host": ["{{URL}}"],
+							"path": ["favourites", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update with id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"spot\": 92\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/favourites/12",
+							"host": ["{{URL}}"],
+							"path": ["favourites", "12"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete with id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/favourites/1",
+							"host": ["{{URL}}"],
+							"path": ["favourites", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"spot\": 92\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/favourites",
+							"host": ["{{URL}}"],
+							"path": ["favourites"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Karolann24@yahoo.com\",\n    \"password\": \"Test\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/login",
+					"host": ["{{URL}}"],
+					"path": ["login"]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "786df649-09c5-4003-a9f2-f673f7163116",
+				"type": "text/javascript",
+				"exec": [""]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6ef33c41-045f-4d96-8afc-830ac1dea1be",
+				"type": "text/javascript",
+				"exec": [""]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b9da0506-f71e-4d02-81b8-c1ad559816b8",
+			"key": "URL",
+			"value": "https://5ddbb358041ac10014de140b.mockapi.io",
+			"type": "string"
+		}
+	]
+}
